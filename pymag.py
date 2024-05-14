@@ -69,7 +69,7 @@ class Application(tk.Frame):
                 self.width/ratio, self.mouse_y + self.height/ratio) 
         ss_img = ImageGrab.grab(ss_region)
         resized_image = ss_img.resize((round(self.width*ratio),
-            round(self.height*ratio)), Image.ANTIALIAS)
+            round(self.height*ratio)), Image.LANCZOS)
         new_image = ImageTk.PhotoImage(resized_image)
         self.label_img['image'] = new_image
         self.master.after(round(ratio*25), self.forever)
